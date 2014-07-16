@@ -1,0 +1,32 @@
+### User definitions
+user:
+  alice:
+    name: alice
+    uid: 500
+    gid: 500
+    ssh_key: 'ssh-rsa AAAAThisIsAlicesSSHKey comment'
+    enabled: false
+  bob:
+    name: bob
+    uid: 501
+    gid: 501
+    ssh_key: 'ssh-rsa AAAAThisIsBobsSSHKey comment'
+    enabled: true
+  charlie:
+    name: charlie
+    uid: 502
+    gid: 502
+    ssh_key: 'ssh-rsa AAAAThisIsCharliesSSHKey comment'
+    enabled: true
+
+### Groups of users definitions
+users_all:
+  - alice
+  - bob
+  - charlie
+
+users_web:
+  - bob
+
+users_haproxy:
+  - charlie

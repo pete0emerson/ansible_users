@@ -1,0 +1,19 @@
+---
+- name: Add user's group
+  group: name={{ user[item]['name'] }} gid={{ user[item]['gid'] }}
+  sudo: yes
+  with_flattened: accounts_to_add
+  when: user[item]['enabled']
+- name: Add group
+  group: name={{ accounts_to_add }}
+  sudo: yes
+- name: Add user
+  user: name={{ user[item]['name'] }} group={{ user[item]['name'] }} groups={{ accounts_to_add }} shell=/bin/bash uid={{ user[item]['uid'] }}
+  sudo: yes
+  with_flattened: accounts_to_add
+  when: user[item]['enabled']
+- name: Add SSH key
+  authorized_key: user={{ user[item]['name'] }} key='{{ user[item]['ssh_key'] }}' state=present
+  sudo: yes
+  with_flattened: accounts_to_add
+  when: user[item]['enabled']

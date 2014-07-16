@@ -1,0 +1,4 @@
+---
+- hosts: all
+  roles:
+    - {role: remove_users, accounts_to_remove: users_all}

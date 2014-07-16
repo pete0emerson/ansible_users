@@ -1,0 +1,15 @@
+[all]
+ubuntu-01
+ubuntu-02
+ubuntu-03
+ubuntu-04
+
+[bastion]
+ubuntu-01
+
+[haproxy]
+ubuntu-02
+
+[web]
+ubuntu-03
+ubuntu-04
