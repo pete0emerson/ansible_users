@@ -5,7 +5,7 @@ user:
     uid: 500
     gid: 500
     ssh_key: 'ssh-rsa AAAAThisIsAlicesSSHKey comment'
-    enabled: false
+    enabled: true
   bob:
     name: bob
     uid: 501

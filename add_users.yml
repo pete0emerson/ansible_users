@@ -1,5 +1,5 @@
 ---
-- hosts: bastion
+- hosts: all
   roles:
     - {role: add_users, accounts_to_add: users_all}
 - hosts: haproxy
