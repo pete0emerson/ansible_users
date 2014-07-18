@@ -1,0 +1,10 @@
+---
+- hosts: bastion
+  roles:
+    - {role: users, accounts: users_all}
+- hosts: haproxy
+  roles:
+    - {role: users, accounts: users_haproxy}
+- hosts: web
+  roles:
+    - {role: users, accounts: users_web}
